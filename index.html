@@ -113,14 +113,17 @@
 
     .footer-row {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px 24px;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      /* اجازه شکستن به خط بعد نده */
+      gap: 8px;
       margin-top: 24px;
       font-size: 13px;
     }
 
+
     .footer-item {
+      /* flex: 1; */
       display: flex;
       align-items: center;
       gap: 6px;
@@ -206,8 +209,8 @@
 
       <div class="ticket-left">
         <div style="display: flex; justify-content: space-between;">
-          <img src="/Ticket/logo.png" alt="logo" width="60" height="60" />
-          <img src="/Ticket/logoAmirKabir.png" alt="logo" width="60" height="60" />
+          <img src="/logo.png" alt="logo" width="60" height="60" />
+          <img src="/logoAmirKabir.png" alt="logo" width="60" height="60" />
         </div>
 
         <h3>سمینار هوش مصنوعی در روانشناسی</h3>
