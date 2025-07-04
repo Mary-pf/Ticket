@@ -1,87 +1,51 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ticket</title>
-  <link href="https://cdn.fontcdn.ir/Font/Persian/IranSans/IranSans.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" type="text/css" />
-
-
+  <title>بلیط سمینار روانشناسی</title>
+  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       font-family: 'Vazir', sans-serif;
-      background: linear-gradient(135deg, #e4e2f5, #d9e8f5);
+      background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
       padding: 40px;
       text-align: center;
     }
 
     .title {
-      font-size: 26px;
-      margin-bottom: 20px;
+      font-size: 28px;
       font-weight: bold;
-      color: #333;
+      color: #4a148c;
+      margin-bottom: 30px;
     }
 
     .wrapper {
       display: inline-block;
-      padding: 20px;
-      background: linear-gradient(90deg, #fff7e6, #fff0f5);
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+      padding: 24px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     }
 
     .ticket-container {
-      background-color: #ffcc70;
-      width: 780px;
-      height: 380px;
-      margin: auto;
       display: flex;
-      border-radius: 16px;
-      position: relative;
+      width: 800px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .ticket-left{
-      background: linear-gradient(90deg, #ffcc70, #ffb347 );
-    }
-
-    .ticket-left, .ticket-right {
-      padding: 2px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .ticket-left {
-      flex: 1;
-      color: #333;
-    }
-
-    .ticket-right {
-      width: 180px;
-      background: #ffffff;
-      color: #333;
-    }
-
-    .divider {
-      width: 2px;
-      border-left: 3px dashed #666161a0;
-      margin: 0 10px;
-      height: 100%;
-      align-self: stretch;
-      transform: translateX(-8px);
+      position: relative;
+      background: linear-gradient(135deg, #e1f5fe, #ede7f6);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
 
     .notch {
       position: absolute;
       width: 20px;
       height: 40px;
-      background: #f0f0fa;
-      z-index: 1;
+      background: white;
+      z-index: 2;
     }
 
     .notch.left {
@@ -98,170 +62,294 @@
       border-bottom-left-radius: 20px;
     }
 
-    input[type="text"] {
-      width: 220px;
-      /* margin-bottom: 1px; */
-      padding: 8px 12px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 12px;
-      font-family: 'IranSans';
-      background: #ffffff;
-      transition: 0.3s;
+    .ticket-left,
+    .ticket-right {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    input[type="text"]:focus {
-      border-color: #3b82f6;
+    .ticket-left {
+      flex: 1;
+      /* background: linear-gradient(135deg, #ba68c8, #4fc3f7); */
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      color: white;
+      position: relative;
+    }
+
+    .ticket-left h3 {
+      font-size: 26px;
+      margin: 20px auto;
+    }
+
+    .ticket-left input {
+      border: none;
+      font-size: 15px;
+      background: transparent;
+      color: white;
+      border-bottom: 1px dashed white;
+      width: 60%;
+    }
+
+    .ticket-left i {
+      font-size: 16px;
+      color: white;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0;
+    }
+
+    .address {
+      font-size: 15px;
+      margin-top: 12px;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 24px;
+      font-size: 13px;
+    }
+
+    .footer-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: white;
+    }
+
+    .footer-item i {
+      font-size: 16px;
+    }
+
+    .divider {
+      width: 2px;
+      background: repeating-linear-gradient(to bottom, #ccc, #ccc 5px, transparent 5px, transparent 10px);
+    }
+
+    .ticket-right {
+      width: 240px;
+      background: linear-gradient(110deg, #ced6e0, #ffffff);
+      /* border-radius: 0 20px 20px 0; */
+      color: #222;
+    }
+
+    .ticket-right input[type="text"] {
+      color: #222;
+      border-bottom: 1px solid rgba(34, 34, 34, 0.4);
+      background: transparent;
+    }
+
+
+
+    .ticket-right input[type="text"] {
+      width: 100%;
+      padding: 6px 8px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      font-size: 14px;
+      font-family: 'Vazir';
+      background: transparent;
       outline: none;
     }
 
-    input[type="file"] {
-      margin-bottom: 8px;
-      cursor: pointer;
+    .ticket-right label {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 4px;
     }
 
-    img {
-      border-radius: 50%;
+    .ticket-right .field {
+      margin-bottom: 16px;
+    }
+
+    .ticket-right img {
+      width: 100px;
+      height: 100px;
+      border-radius: 16px;
       object-fit: cover;
-      margin-bottom: 10px;
-    }
-
-    #profile {
-      width: 110px;
-      height: 110px;
-    }
-
-    #logo {
-      width: 90px;
-      height: 90px;
+      margin: 10px auto;
     }
 
     .download-btn {
-      margin-top: 20px;
-      padding: 10px 24px;
-      background: #3b82f6;
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: #6a1b9a;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      font-family: 'IranSans';
-      font-size: 15px;
+      font-size: 16px;
+    }
+
+    input[type="file"] {
+      margin-bottom: 10px;
     }
   </style>
 </head>
+
 <body>
-  <div class="title">Ticket Seminar</div>
+  <div class="title">بلیط رسمی سمینار روانشناسی</div>
   <div class="wrapper">
     <div id="ticket" class="ticket-container">
       <div class="notch left"></div>
       <div class="notch right"></div>
-      
-      <div class="ticket-left">
-        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 10px;">
-          <img src="/logo.png" alt="logo" width="60" height="60" />
-          <img src="/logoAmirKabir.png" alt="logo" width="60" height="60" />
-        </div>
-      
-        <h3 style="margin: 0 auto 16px; font-weight: bold; font-size: 28px; text-align: center; color: white;">
-سمینار روانشناسی
-        </h3>
 
-        <!-- <input type="text" id="name" placeholder="..."> -->
-      
-        <div style="display: flex; justify-content: flex-start; align-items: center; gap: 7px; margin: 6px 0;">
-          <i class="fa-regular fa-calendar-days" style="color: #fff; font-size: 16px;"></i>
-          <input type="text" placeholder="تاریخ برگزاری"
-            style="font-size: 15px; border: none; outline: none;">
+      <div class="ticket-left">
+        <div style="display: flex; justify-content: space-between;">
+          <img src="/Ticket/logo.png" alt="logo" width="60" height="60" />
+          <img src="/Ticket/logoAmirKabir.png" alt="logo" width="60" height="60" />
         </div>
-        
-        <div style="display: flex; justify-content: start ;align-items: center; gap: 8px; margin: 12px 0;">
-          <i class="fa-solid fa-clock" style="color: #fff;"></i>
-          <input type="text" id="name" placeholder="زمان برگزاری" style="font-size: 15px; border: none;">
-          <!-- <span >سه‌شنبه ۱۲ تیر ۱۴۰۳</span> -->
+
+        <h3>سمینار هوش مصنوعی در روانشناسی</h3>
+
+        <div class="info-row" style="display: flex; justify-content: center;">
+          <i class="fa-regular fa-calendar-days"></i>
+          <input type="text" placeholder="تاریخ برگزاری" class="downloadable" />
         </div>
-      
-        <p style="margin-top:1px; font-size: 16px; color: white; font-weight: bold;">آدرس: <br> نرسیده به تقاطع خیابان انقلاب و ولیعصر، <br > خیابان بالاور، پلاک 7، ساختمان پارک علم و فناوری</p>
-        <div style="display: flex; justify-content: space-around; align-items: center; width: 100%; margin-top: 8px; margin-bottom: 10px; font-size: 13px;">
-          <!-- آیکون واتساپ -->
-          <div style="display: flex; align-items: center; gap: 4px;">
-            <i class="fa-brands fa-whatsapp" style="color: white;"> 090000000</i>
-            <!-- <span>واتساپ</span> -->
+
+        <div class="info-row" style="display: flex; justify-content: center;">
+          <i class="fa-solid fa-clock"></i>
+          <input type="text" placeholder="ساعت برگزاری" class="downloadable" />
+        </div>
+
+        <div class="address">
+          آدرس:<br>
+          نرسیده به تقاطع خیابان انقلاب و ولیعصر<br>
+          خیابان بالاور، پلاک ۷، پارک علم و فناوری
+        </div>
+
+        <div class="footer-row">
+          <div class="footer-item">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Braintest.ir_official</span>
           </div>
-        
-          <!-- شماره تماس وسط -->
-          <div style="font-weight: bold; color: white;">شماره ثابت</div>
-          <div style="font-weight: bold; color: white;">braintest</div>
-        
-          <!-- سایت -->
-          <div style="color: white; font-weight: bold;">
-            braintest.ir
+          <div class="footer-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>09038995220</span>
+          </div>
+          <div class="footer-item">
+            <i class="fa-solid fa-globe"></i>
+            <span>braintest.ir</span>
+          </div>
+          <div class="footer-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>021-91012816</span>
           </div>
         </div>
-        
       </div>
-      
 
       <div class="divider"></div>
 
       <div class="ticket-right">
-  <input type="file" accept="image/*" onchange="loadImage(event, 'logo')"><br />
-  <img id="logo" src="" alt=""><br />
+        <input type="file" accept="image/*" onchange="loadImage(event, 'logo')" />
+        <img id="logo" src="" alt="تصویر شرکت‌کننده" />
 
-  <div style="display: flex; align-items: center; gap: 2px; margin-bottom: 6px;">
-    <label style="font-size: 14px; min-width: 80px;">نام:</label>
-    <input type="text" placeholder="نام و نام خانوادگی"
-      style="width: 100px; border: none; text-align:start; font-size: 15px; background: transparent;">
-  </div>
+        <div class="field">
+          <label>نام و نام خانوادگی:</label>
+          <input type="text" id="name" class="downloadable" placeholder="مثلاً علی رضایی" />
+        </div>
 
-  <div style="display: flex; align-items: center; gap: 2px; margin-bottom: 6px;">
-    <label style="font-size: 14px; min-width: 80px; padding-right: 38px;">شماره بلیط:</label>
-    <input type="text" placeholder="شماره بلیط"
-      style="width: 100px; border: none; text-align: start; font-size: 15px; background: transparent;">
-  </div>
+        <div class="field">
+          <label>شماره بلیط:</label>
+          <input type="text" id="ticketNumber" class="downloadable" placeholder="مثلاً 12345" />
+        </div>
 
-  <div style="display: flex; align-items: center; gap: 2px; margin-bottom: 2px;">
-    <label style="font-size: 14px; min-width: 80px; padding-right: 38px;">بهای بلیط: </label>
-    <input type="text" placeholder="بهای بلیط"
-      style="width: 100px; border: none; text-align: start; font-size: 15px; background: transparent;">
-  </div>
-</div>
-
+        <div class="field">
+          <label>بهای بلیط:</label>
+          <input type="text" id="pric" class="downloadable" placeholder="مثلاً ۱۰۰٬۰۰۰ تومان" />
+        </div>
+      </div>
     </div>
   </div>
+
   <button class="download-btn" onclick="downloadTicket()">دانلود تصویر بلیط</button>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
+    // تبدیل اعداد انگلیسی به فارسی در هر رشته
+    function toPersianNumber(str) {
+      const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+      return str.replace(/[0-9]/g, w => persianDigits[+w]);
+    }
+
+    // اعداد فارسی سازی برای ورودی‌های غیر قیمت
+    function handlePersianNumberInput(e) {
+      const pos = e.target.selectionStart;
+      e.target.value = toPersianNumber(e.target.value);
+      e.target.selectionStart = e.target.selectionEnd = pos;
+    }
+
+
+    // اعمال رویدادهای ورودی
+    document.querySelectorAll('input.downloadable').forEach(input => {
+      if (input.id === 'price') {
+        input.addEventListener('input', formatPriceInput);
+      } else {
+        input.addEventListener('input', handlePersianNumberInput);
+      }
+    });
+
     function loadImage(event, id) {
       const reader = new FileReader();
       reader.onload = function () {
         document.getElementById(id).src = reader.result;
-        event.target.style.display = "none"; // مخفی کردن input فایل پس از انتخاب عکس
+        event.target.style.display = "none";
       };
       reader.readAsDataURL(event.target.files[0]);
     }
 
     function downloadTicket() {
-      const wrapper = document.querySelector(".wrapper");
-      html2canvas(wrapper, {backgroundColor: null}).then((canvas) => {
-        const ctx = canvas.getContext('2d');
+      const inputs = document.querySelectorAll('.downloadable');
+      const spans = [];
 
-        // گرادیانت بک‌گراند برای تصویر نهایی
-        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-        gradient.addColorStop(0, '#fff7e6');
-        gradient.addColorStop(1, '#fff0f5');
+      inputs.forEach(input => {
+        const span = document.createElement('span');
+        span.textContent = input.value || input.placeholder;
+        span.style.cssText = window.getComputedStyle(input).cssText;
+        span.style.border = 'none';
+        span.style.background = 'transparent';
+        span.style.padding = '6px 0';
+        span.style.display = 'inline-block';
+        span.style.fontSize = input.style.fontSize || '14px';
+        span.style.width = input.offsetWidth + 'px';
+        span.style.textAlign = input.style.textAlign || 'start';
+        input.parentNode.insertBefore(span, input);
+        spans.push({
+          input,
+          span
+        });
+        input.style.display = 'none';
+      });
 
-        ctx.globalCompositeOperation = 'destination-over';
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        // دانلود تصویر
+      html2canvas(document.querySelector('.wrapper'), {
+        backgroundColor: null
+      }).then(canvas => {
         const link = document.createElement("a");
         link.download = "ticket.png";
         link.href = canvas.toDataURL();
         link.click();
+
+        // Restore inputs
+        spans.forEach(({
+          input,
+          span
+        }) => {
+          input.style.display = '';
+          span.remove();
+        });
       });
     }
   </script>
 </body>
+
 </html>
