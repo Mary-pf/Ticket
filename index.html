@@ -204,6 +204,60 @@
     input[type="file"] {
       margin-bottom: 10px;
     }
+
+    .price-container {
+  display: flex;
+  justify-content: flex-end; /* راست‌چین */
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+  direction: rtl; /* برای راست به چپ بودن */
+}
+
+.original-price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-title {
+  display: inline-block;
+  max-width: 120px; /* تنظیم به دلخواه */
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  color: #777;
+  font-weight: 600;
+}
+
+
+
+.price-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d32f2f;
+  text-decoration: line-through;
+}
+
+.green-input {
+  border: 1px solid #4caf50;
+  padding: 6px 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2e7d32; /* سبز */
+  border-radius: 6px;
+  width: 140px;
+  background: transparent;
+  outline: none;
+}
+
+.green-input::placeholder {
+  color: #a5d6a7;
+}
+
+
+
   </style>
 </head>
 
@@ -276,8 +330,30 @@
 
         <div class="field">
           <label>بهای بلیط:</label>
-          <input type="text" id="pric" class="downloadable" placeholder="مثلاً ۱۰۰٬۰۰۰ تومان" />
+        
+          <!-- قیمت اصلی با خط خوردگی و تیتر -->
+          <div class="original-price">
+            <span class="price-title">قیمت اصلی</span>
+            <span class="price-value" style="padding-bottom: 10px;">۱,۵۰۰,۰۰۰ تومان</span>
+          </div>  
+                  
+          <div class="original-price">
+            <span class="price-title">قیمت VIP</span>
+            <input
+            type="text"
+            id="discountPrice"
+            class="downloadable"
+            style="width: auto; padding: 0;"
+            placeholder="قیمت با تخفیف"
+          />
+          </div>          
+          
+          
+          <!-- قیمت با تخفیف -->
+          </div>
+          
         </div>
+        
       </div>
     </div>
   </div>
